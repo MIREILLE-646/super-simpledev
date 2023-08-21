@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Porfolio Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <link rel="stylesheet" href="porfolio.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <!--link to aos animation-->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("8la0sxEr9T0Zg-BHQ");
+    })();
+  </script>
+</head>
+
+<body>
+  <!-===============================================* creation of navigation bar starts
+    *===============================================->
+    <nav class="navbar navbar-expand-sm navbar-light">
+      <!-- Brand/logo -->
+      <div class="container-fluid  mx-5  col-sm-8 ">
+        <a class="navbar-brand" href="#">
+          <img src="img/logo.PNG" alt="logo" style="width:100px;">
+        </a>
+
+        <!-- Links -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active text-primary " href="index.html">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">ABOUT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="design.html">DESIGN</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="services.html">SERVICES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">CONTACT</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!--
+        ===============================================
+        *       creation of navigation bar ends        *
+        ===============================================
+  -->
+    <!--
+        ===============================================
+        *                   contact stars                *
+        ===============================================
+  -->
+    <div class="container mx-auto " data-aos="fade-up" data-aos-duration="2000">
+      <form action="" method="">
+        <h2 class="h2-responsive my-5 text-center">Way To Contact Me</h2>
+        <p class="p-responsive text-center">Do you have any questions? Please do not hesitate to contact me directly.
+          <br>
+          I will come back to you within a matter of hours to help you.
+        </p>
+        <div class="row g-0">
+          <div class="col-lg-6 ">
+            <img src="img/call.jpg" alt="" class="w-50">
+          </div>
+          <div class="col-lg-6 my-2 justify-content-center ">
+            <input type="text" placeholder="Full Name" class="form-control" id="name"><br>
+            <input type="email" placeholder="Email Address" class="form-control" id="email"><br>
+            <input type="number" placeholder="Phone Number" class="form-control" id="Pnumber"><br>
+            <textarea name="" id="message" cols="30" rows="7" placeholder="Message..."
+              class="form-control"></textarea><br>
+            <button type="button" class="btn btn-primary w-50" onclick="sendMail()">SEND!</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!--
+                    ===============================================
+                    *                   contact ends                 *
+                    ===============================================
+  -->
+    <!--
+                    ===============================================
+                    *                  footer starts                 *
+                    ===============================================
+  -->
+
+    <div class="container  bg-light my-5 text-muted text-center">
+      <div class="row">
+        <div class="col-sm-4 my-3">
+          <i class="fa fa-phone" aria-hidden="true" style="font-size: 30px;"></i>
+          <p class="h3">Phone</p>
+          <p>(+237) 652-03-97-33</p>
+          <p>(+237) 674-95-74-96</p>
+        </div>
+
+        <div class="col-sm-4 my-3">
+          <i class="fa fa-location" aria-hidden="true" style="font-size: 30px;"></i>
+          <p class="h3">Location</p>
+          <p>Bepanda,Douala Cameroon</p>
+        </div>
+
+        <div class="col-sm-4 my-3">
+          <i class="fa fa-envelope" aria-hidden="true" style="font-size: 30px;"></i>
+          <p class="h3">EMAIL</p>
+          <p>malaloummireille@gmail.com</p>
+        </div>
+
+        <!-- social media icons creation-->
+        <p class="text-center">Get connected wirh me on social media</p>
+        <div class="icon mx-auto text-center my-2" style="font-size: 30px; ">
+          <a href="https://www.facebook.com/profile.php?id=100072313241143" title="facebook">
+            <i class="fa-brands fa-facebook mx-3  " style="color:rgb(1, 1, 255) ;"></i></a>
+          <a href="http://www.youtube.com/@mireillemalaloum7159" title="Youtube">
+            <i class="fa-brands fa-youtube mx-3  " style="color:red ;"></i></a>
+          <a href="https://www.linkedin.com/in/mireille-malaloum-9a7b9b256" title="LinkIn">
+            <i class="fa-brands fa-linkedin mx-3 " style="color: rgb(91, 87, 87);"></i></a>
+        </div>
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+          © 2022 Copyright:
+          <a class="text-reset fw-bold" href="https://Besttechnology.net">PorfolioBuild | All right Reserved</a>
+        </div>
+        <!-- Copyright -->
+        <!--
+                        ===============================================
+                        *                  footer ends                   *
+                        ===============================================
+  -->
+        <script src="js/bootstrap.js"></script>
+        <!-- link to aos animation-->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+          AOS.init();
+        </script>
+        <script>
+
+          // ====================================================
+          // ===========Send email using EmailJs.com
+
+          function sendMail() {
+            var params = {
+              name: document.getElementById("name").value,
+              email: document.getElementById("email").value,
+              Telephone: document.getElementById("Pnumber").value,
+              message: document.getElementById("message").value,
+            };
+
+            const serviceID = "service_lehpdsh";
+            const templateID = "template_nl839ga";
+
+            emailjs.send(serviceID, templateID, params)
+              .then(
+                (res) => {
+                  document.getElementById("name").value = "";
+                  document.getElementById("email").value = "";
+                  document.getElementById("Pnumber").value = "";
+                  document.getElementById("message").value = "";
+                  console.log(res);
+                  alert("your message sent successfully");
+                }
+              )
+              .catch((err) => console.log(err));
+          }
+
+      // ====================================================
+        </script>
+</body>
+
+</html>
